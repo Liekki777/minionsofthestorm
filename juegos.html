@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Trabajo 2º Evaulacion</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/estilos2.css" />
+        <script type="text/javascript" src="beans/Producto.js"></script>
+        <script type="text/javascript" src="services/Cargar.js"></script>
+        <script type="text/javascript" src="beans/Traductor.js"></script>
+        <style type="text/css">
+        </style>
+        <script type="text/javascript">
+            var arrayProductos = new Array();
+
+            function initComponents()
+            {
+                for (var i = 0; i < arrayProductos.length; i++)
+                {
+
+                    //var dive = document.getElementById("STATIC_caja" + i);
+                    var contenedor = document.querySelector("#CONTENEDOR1");
+                    var creoDiv = document.createElement("div");
+                    creoDiv.className = "divFoto";
+                    var creoDiv2 = document.createElement("div");
+                    creoDiv2.className = "divTitulo";
+                    var creoDiv3 = document.createElement("div");
+                    creoDiv3.className = "divTitulo";
+
+                    var objProducto = arrayProductos[j];
+                    var nombreImagen = objProducto.getImagen();
+                    var titulo = objProducto.getNombre();
+                    var descripcionImagen = objProducto.getDescripcion();
+
+
+                    var img = "<img src='images/" + nombreImagen + ".jpg'/>";
+                    var nombre = "<h1>" + titulo + "</h1>";
+                    var descripcion = "<p>" + descripcionImagen + "</p>";
+
+                    creoDiv.innerHTML = img;
+                    creoDiv2.innerHTML = nombre;
+                    creoDiv3.innerHTML = descripcion;
+                    //creoDiv.appendChild(img);
+                    contenedor.appendChild(creoDiv2);
+                    contenedor.appendChild(creoDiv);
+                    contenedor.appendChild(creoDiv3);
+                }
+
+            }
+
+            function añadirImagenes()
+            {
+
+                var matrizProductos = new Array();
+
+                matrizProductos[0] =
+                        new Producto("1. Dragon Ball: Xenoverse - PS4",
+                                "El universo Dragon Ball se expande con este videojuego que debuta en los sistemas de nueva generación para ofrecer a los jugadores combates frenéticos entre Goku y sus mayores enemigos tales como Vegeta, Freezer, Célula y muchos otros. Todo ello con un nuevo sistema de juego, un nuevo mapa del mundo y una ciudad misteriosa entre otras novedades.",
+                                "Dragon_Ball_Xenoverse_Juego");
+                matrizProductos[1] =
+                        new Producto("1. Dragon Ball: Xenoverse - PS4",
+                                "Dragon Ball universe expands with this game that debuts in next generation systems to provide players frenetic combat between Goku and his greatest enemies such as Vegeta, Frieza ,Cell and many others. All this with a new game system , a new map of the world and a mysterious city among other innovations .",
+                                "Dragon_Ball_Xenoverse_Juego");
+
+                arrayProductos.push(matrizProductos);
+
+                var matrizProductos = new Array();
+                matrizProductos[0] =
+                        new Producto("2. The order: 1886 - PS4",
+                                "The Order 1886 es un videojuego de corte fantástico y ambientación de época para PlayStation 4. Acreedor de un gran apartado gráfico y de una poderosa premisa jugable, el título mezcla elementos anacrónicos en una ambientación con elementos Steampunk con mucha habilidad para enfrentarnos a bestias de pesadilla.",
+                                "The_Order_1886_Juego");
+                matrizProductos[1] =
+                        new Producto("2. The order: 1886 - PS4",
+                                "The Order 1886 is a fantastic game of cutting and setting of time for PlayStation 4. Creditor great graphics and a powerful playable premise, the title mixture anachronistic elements in a setting with Steampunk elements skillfully to face nightmarish beasts .",
+                                "The_Order_1886_Juego");
+
+                arrayProductos.push(matrizProductos);
+
+                var matrizProductos = new Array();
+                matrizProductos[0] =
+                        new Producto("3. Dying Light - PC",
+                                "Los creadores de la serie Dead Island presentan Dying Light, un juego de acción en primera persona con características de survival horror ambientado en un mundo abierto, para consolas de esta generación y la siguiente.",
+                                "Dying_Light_Juego");
+                matrizProductos[1] =
+                        new Producto("3. Dying Light - PC",
+                                "The creators of the series have Dead Island Dying Light , an action game features first-person survival horror set in an open console of this generation and the next world.",
+                                "Dying_Light_Juego");
+
+                arrayProductos.push(matrizProductos);
+                
+                var matrizProductos = new Array();
+                matrizProductos[0] =
+                        new Producto("4. Bloodborne - PS4",
+                                "Videojuego exclusivo para PS4 de los creadores de Demon's Souls. El título nos traslada al siglo XIX, a una especie de oscuro y tétrico Londres victoriano donde encontraremos todos los ingredientes de la saga Souls: exploración, un online distintivo y unos enfrentamientos a vida o muerte. La gran diferencia es que Bloodborne se orienta al combate ofensivo, arrebatándonos el escudo de entre las manos y obligándonos a atacar con las numerosas armas de fuego y nuevos movimientos.",
+                                "Bloodborne_Juego");
+                matrizProductos[1] =
+                        new Producto("4. Bloodborne - PS4",
+                                "PS4 exclusive game for the creators of Demon 's Souls . The title takes us back to the nineteenth century, a kind of dark and gloomy Victorian London where all the ingredients of the saga Souls find : exploration, a distinctive online and clashes life and death . The big difference is that Bloodborne is aimed at offensive combat , taking away the shield of his hands and forcing us to attack with numerous guns and new moves.",
+                                "Bloodborne_Juego");
+
+                arrayProductos.push(matrizProductos);
+                
+                var matrizProductos = new Array();
+                matrizProductos[0] =
+                        new Producto("5. Minecraft - PS3",
+                                "En Minecraft se nos presenta un mundo creado a base de cubos en 3D en el que el usuario dispone de una amplia libertad para crear sus propias construcciones. El videojuego es considerado todo un fenómeno social por la cantidad de jugadores, posibilidades y versiones que presenta.",
+                                "Minecraft_Juego");
+                matrizProductos[1] =
+                        new Producto("5. Minecraft - PS3",
+                                "Minecraft is presented in a world created based on 3D cubes in which the user has a wide freedom to create their own constructions . The game is considered a social phenomenon by the number of players , possibilities and versions presented.",
+                                "Minecraft_Juego");
+
+                arrayProductos.push(matrizProductos);
+                
+                var matrizProductos = new Array();
+                matrizProductos[0] =
+                        new Producto("6. Resident Evil: Revelations 2 - PC",
+                                "Resident Evil Revelations vuelve a la carga con esta segunda entrega cargada de acción, aventura y aroma clásico, y que se distribuye tanto en formato físico en versión completa como en una edición digital que se puede adquirir en episodios. El juego tiene lugar entre los hechos sucedidos en Resident Evil 5 y 6, y gira en torno a dos protagonistas principales: Claire Redfield y Moira Burton, hija de Barry Burton.",
+                                "Resident_Evil_Revelations2_Juego");
+                matrizProductos[1] =
+                        new Producto("6. Resident Evil: Revelations 2 - PC",
+                                "Resident Evil Revelations returns to the fray with this second installment loaded with action, adventure and classic aroma, and distributed both in physical format in full version as a digital edition that is available in episodes. The game takes place between the events in Resident Evil 5 and 6, and revolves around two main characters : Claire Redfield and Moira Burton , daughter of Barry Burton.",
+                                "Resident_Evil_Revelations2_Juego");
+
+                arrayProductos.push(matrizProductos);
+                
+                var matrizProductos = new Array();
+                matrizProductos[0] =
+                        new Producto("7. Battlefield Hardline - PS4",
+                                "Entrega de la serie Battlefield cuyo desarrollo corre a cargo de Visceral Games, y que nos ofrece una ambientación de policías y ladrones. En el modo campaña controlaremos a un joven detective, contando el título con varias modalidades multijugador y la posibilidad de participar en ambos lados de la ley.",
+                                "BattleField_Hardline_Juego");
+                matrizProductos[1] =
+                        new Producto("7. Battlefield Hardline - PS4",
+                                "Delivery of the Battlefield series whose development is provided by Visceral Games , which offers an ambience of cops and robbers. In campaign mode control a young detective, counting the title with several multiplayer modes and the possibility to participate on both sides of the law .",
+                                "BattleField_Hardline_Juego");
+
+                arrayProductos.push(matrizProductos);
+                
+                var matrizProductos = new Array();
+                matrizProductos[0] =
+                        new Producto("8. Mortal Kombat X - PS4",
+                                "Décima entrega de la serie de lucha Mortal Kombat. El juego ofrece una nueva experiencia conectada que permite a los jugadores participar en una competición online donde cada lucha será fundamental en una batalla global por la supremacía. Por primera vez, Mortal Kombat X permite a los jugadores la posibilidad de elegir distintas versiones de cada personaje, siendo esto decisivo para la estrategia y el estilo de lucha.",
+                                "Mortal_Kombat_X_Juego");
+                matrizProductos[1] =
+                        new Producto("8. Mortal Kombat X - PS4",
+                                "Bye",
+                                "Mortal_Kombat_X_Juego");
+
+                arrayProductos.push(matrizProductos);
+                
+                var matrizProductos = new Array();
+                matrizProductos[0] =
+                        new Producto("9. Final Fantasy XV - PS4",
+                                "Un nuevo título de la famosa saga Final Fantasy de Square Enix llega a PS4. Un videojuego basado en la fábula Nova Crystallis que también inspira a Final Fantasy XIII, pero que en este caso tiene una fuerte orientación hacia el género de la acción.",
+                                "Final_Fantasy_XV_Juego");
+                matrizProductos[1] =
+                        new Producto("9. Final Fantasy XV - PS4",
+                                "A new title of the famous Final Fantasy saga of Square Enix comes to PS4 . A video game based on the fable Nova Crystallis also inspires Final Fantasy XIII, but in this case has a strong orientation towards the genre of action.",
+                                "Final_Fantasy_XV_Juego");
+
+                arrayProductos.push(matrizProductos);
+                
+                var matrizProductos = new Array();
+                matrizProductos[0] =
+                        new Producto("10. The Witcher 3: Wild Hunt - PC",
+                                "The Witcher 3: Wild Hunt es la tercera entrega de la serie The Witcher, que nos devuelve al conocido cazador de bestias Geralt de Rivia en una nueva aventura. Rol de la vieja escuela en un fascinante mundo de fantasía, cargado de grandes historias y con un gran acabado artístico y tecnológico.",
+                                "The_Witcher3_Juego");
+                matrizProductos[1] =
+                        new Producto("10. The Witcher 3: Wild Hunt - PC",
+                                "The Witcher 3: Wild Hunt is the third installment of The Witcher series , which returns us to the beasts known hunter Geralt of Rivia in a new adventure . Role of the old school in a fascinating fantasy world, full of great stories and great artistic and technological finish.",
+                                "The_Witcher3_Juego");
+
+                arrayProductos.push(matrizProductos);
+                
+
+                refreshListaProductos(0);
+            }
+            function refreshListaProductos(id) {
+
+                var original = document.querySelector("#CONTENEDOR1");
+                limpiarCapa(original);
+
+                for (var j = 0; j < 10; j++) {
+                    // Notificar los objetos al HTML
+                    var contenedor = document.querySelector("#CONTENEDOR1");
+                    var creoDiv = document.createElement("div");
+                    creoDiv.className = "divFoto";
+                    var creoDiv2 = document.createElement("div");
+                    creoDiv2.className = "divTitulo";
+                    var creoDiv3 = document.createElement("div");
+                    creoDiv3.className = "divDescripcion";
+
+                    var objProducto = arrayProductos[j];
+                    var nombreImagen = objProducto[id].getImagen();
+                    var titulo = objProducto[id].getNombre();
+                    var descripcionImagen = objProducto[id].getDescripcion();
+
+
+
+                    var img = "<img src='images/juegos/" + nombreImagen + ".jpg'/>";
+                    var nombre = "<h1>" + titulo + "</h1>";
+                    var descripcion = "<p>" + descripcionImagen + "</p>";
+
+                    creoDiv.innerHTML = img;
+                    creoDiv2.innerHTML = nombre;
+                    creoDiv3.innerHTML = descripcion;
+                    //creoDiv.appendChild(img);
+                    contenedor.appendChild(creoDiv2);
+                    contenedor.appendChild(creoDiv);
+                    contenedor.appendChild(creoDiv3);
+                }
+            }
+            function limpiarCapa(capaALimpiar) {
+                while (capaALimpiar.firstChild !== null) {
+                    capaALimpiar.removeChild(
+                            capaALimpiar.firstChild
+                            );
+                }
+            }
+
+            function loguearse() {
+                var usuario = document.querySelector("#usuario_login").value;
+                var pass = document.querySelector("#password_login").value;
+
+                //comprobamos que el usuario esta registrado
+                if (usuario !== "" && pass !== "") {
+                    //recuperamos los valores guardados en sessionStorage y los deserializamos para leerlos
+                    var usuarios = "David";
+                    var password = "david";
+
+                    if (usuarios === usuario && password === pass) {
+                        //colocamos el contenido de usuario logueado
+                        colocar_cuenta_logueado(usuario);
+
+                        alert("login correcto.");
+                    }
+                    else {
+                        alert("login incorrecto.");
+                    }
+                }
+            }
+
+            function colocar_cuenta_logueado(usuario) {
+                
+                var original = document.querySelector("#menu_de_acceso");
+                limpiarCapa(original);
+                
+                //colocamos los diferentes botones y textos para un usuario logueado
+                var login = document.querySelector("#menu_de_acceso");
+                var creoDiv = document.createElement("div");
+                var creoDiv2 = document.createElement("div");
+
+                var bienvenido = "<label id=\"et_log\" class=\"logueado\">Bienvenido " + usuario + "</label><br/>";
+                var salir = "<input type=\"button\" id=\"deslogin\" class=\"logueado\" value=\"Salir\"/ onclick=\"desloguearse()\">";
+
+                creoDiv2.innerHTML = bienvenido;
+                creoDiv.innerHTML = salir;
+                //creoDiv.appendChild(img);
+                login.appendChild(creoDiv2);
+                login.appendChild(creoDiv);
+            }
+            
+            //FUNCION QUE DESLOGUEA
+            function desloguearse(){
+                    
+                    var original = document.querySelector("#menu_de_acceso");
+                    limpiarCapa(original);
+
+                    //colocamos los diferentes botones y textos para un usuario logueado
+                    var deslogin = document.querySelector("#menu_de_acceso");
+                    var creoDiv = document.createElement("div");
+                    var creoDiv2 = document.createElement("div");
+                    var creoDiv3 = document.createElement("div");
+                    
+                    var usuario = "<label id=\"et_user\" class=\"etiqueta_login\">Usuario:&nbsp;&nbsp;</label> <input type=\"text\" id=\"usuario_login\"/><br/>";
+                    var password = "<label id=\"et_pass\" class=\"etiqueta_login\">Password:</label><input type=\"password\" id=\"password_login\"/><br/>";
+                    var acceder = "<input type=\"button\" id=\"login\" value=\"Acceder\"/ onclick=\"loguearse()\">";
+
+                    creoDiv.innerHTML = usuario;
+                    creoDiv2.innerHTML = password;
+                    creoDiv3.innerHTML = acceder;
+                    //creoDiv.appendChild(img);
+                    deslogin.appendChild(creoDiv);
+                    deslogin.appendChild(creoDiv2);
+                    deslogin.appendChild(creoDiv3);
+            }
+        </script>
+    </head>
+    <body onload="initComponents();" style="font-family: Ariel;">
+        <div class="contenedor" style="width: 90%;  margin:0 auto; overflow: hidden;">
+            <div id="header" style="width: 100%; height: 15%; margin-bottom: 3%; padding-top: 5%">
+                <a href="index.html"><img src="images/anime_Logo.jpg" class="logo"></a>
+                <div id="acceder">
+                    <div id="menu_de_acceso" class="menu_de_acceso">
+                        <label id="et_user" class="etiqueta_login">Usuario:&nbsp;&nbsp;</label> <input type="text" id="usuario_login"/><br/>
+                        <label id="et_pass" class="etiqueta_login">Password:</label><input type="password" id="password_login"/><br/>
+                        <input type="button" id="login" value="Acceder" onclick="loguearse()"/>
+                    </div>
+                </div>
+                <div id="espanyol" class="bandera" onclick="refreshListaProductos(0)">
+                    <img src="images/espanyol.jpg">
+                </div>
+                <div id="ingles" class="bandera" onclick="refreshListaProductos(1)">
+                    <img src="images/english.gif">
+                </div>
+            </div>
+            <div style="width: 90%;  margin:0 auto; overflow: hidden;"></div>
+            <div>    
+                <ul id="menuhorizontal" class="menuhorizontal">
+                    <li><a href="anime.html">ANIMES</a></li>
+                    <li><a href="mangas.html">MANGAS</a></li>
+                    <li><a href="novelaligera.html">NOVELAS LIGERA</a></li>
+                    <li><a href="juegos.html">JUEGOS</a></li>
+                </ul>
+            </div>
+            <br>
+            <div id="CONTENEDOR1" style="width: 90%; height: 20%; margin-left: 5%;">
+            </div>
+            <div style="width: 100%;  margin:0 auto; overflow: hidden;"></div>
+            <br>
+            <div id="input" style="width: 20%; height: 50%; float:bottom; margin-left: 37%;">
+                <input type="button" value="VER TOP" onclick="añadirImagenes();" style="width: 100%; height: 100%; float:left; ">
+            </div>
+            <div id="PIEDEPAGINA" style="padding-top: 5%;">
+                <table border="1" width="100%">
+                    <tr>
+                        <td style="text-align: center;" width="50%">ABOUT US</td>
+                        <td style="text-align: center;" width="50%">CONTACT US</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">Pagina diseñada para los fanaticos<br> del anime y los juegos</td>
+                        <td style="text-align: center;">Anime S.A.<br>C/Falsa 123 - España<br>Teléfono: 876-654-210</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

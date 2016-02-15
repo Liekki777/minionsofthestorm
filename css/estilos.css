@@ -1,0 +1,79 @@
+body{
+    background-color: mintcream;
+}
+
+.divFoto{
+    text-align: center;
+    height: 15%;
+    float: left;
+    margin-bottom: 2%;
+    padding-left: 3.5%;
+}
+.divTitulo{
+    text-align: center;
+    float: left;
+    width: 17%;
+    height: 5%;
+    margin-bottom: 2%;
+    padding-left: 3%;
+    padding-right: 4%;
+}
+.logo{
+    width: 33.3%; 
+    height: 100px;
+    float: left;
+    margin-left: 55px;
+    padding-right: 25px;
+}
+.menu_de_acceso{
+    float: left;
+    width: 33.3%;
+    margin-right: 10px;
+    border: 1px solid black;
+}
+.menu_de_acceso label{
+    margin-left: 25px;
+}
+.menu_de_acceso input{
+    margin-left: 25px;
+}
+.bandera img{
+    width: 100px;
+    height: 100px;
+    float: left;
+    padding-left: 10px;
+}
+.menuhorizontal {
+  clear:right;
+  width:100%;
+  margin-left: 1.5%;
+  padding:10px;
+  padding-left: 40px;
+  list-style-type:none;
+}
+.menuhorizontal a {
+  float:left;
+  width:20.5%;
+  text-decoration:none;
+  text-align:center;
+  color:yellow;
+  background-color:black;
+  padding:10px 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.menuhorizontal a:hover {
+  background-color: darkred;
+  color: white;
+}
+.menuhorizontal li {
+  display:inline;
+}
+#PIEDEPAGINA{
+  padding:10px 10px;
+  padding-left: 60px;
+}
+#PIEDEPAGINA td{
+  color:yellow;
+  background-color:black;
+}

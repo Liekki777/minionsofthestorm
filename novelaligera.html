@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Trabajo 2º Evaulacion</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/estilos2.css" />
+        <script type="text/javascript" src="beans/Producto.js"></script>
+        <script type="text/javascript" src="services/Cargar.js"></script>
+        <script type="text/javascript" src="beans/Traductor.js"></script>
+        <style type="text/css">
+        </style>
+        <script type="text/javascript">
+            var arrayProductos = new Array();
+
+            function initComponents()
+            {
+                for (var i = 0; i < arrayProductos.length; i++)
+                {
+
+                    //var dive = document.getElementById("STATIC_caja" + i);
+                    var contenedor = document.querySelector("#CONTENEDOR1");
+                    var creoDiv = document.createElement("div");
+                    creoDiv.className = "divFoto";
+                    var creoDiv2 = document.createElement("div");
+                    creoDiv2.className = "divTitulo";
+                    var creoDiv3 = document.createElement("div");
+                    creoDiv3.className = "divTitulo";
+
+                    var objProducto = arrayProductos[j];
+                    var nombreImagen = objProducto.getImagen();
+                    var titulo = objProducto.getNombre();
+                    var descripcionImagen = objProducto.getDescripcion();
+
+
+                    var img = "<img src='images/" + nombreImagen + ".jpg'/>";
+                    var nombre = "<h1>" + titulo + "</h1>";
+                    var descripcion = "<p>" + descripcionImagen + "</p>";
+
+                    creoDiv.innerHTML = img;
+                    creoDiv2.innerHTML = nombre;
+                    creoDiv3.innerHTML = descripcion;
+                    //creoDiv.appendChild(img);
+                    contenedor.appendChild(creoDiv2);
+                    contenedor.appendChild(creoDiv);
+                    contenedor.appendChild(creoDiv3);
+                }
+
+            }
+
+            function añadirImagenes()
+            {
+
+                var matrizProductos = new Array();
+
+                matrizProductos[0] =
+                        new Producto("1. Yahari Ore no Seishun Love Comedy wa Machigatteiru",
+                                "La comedia romántica gira en torno a un estudiante de instituto bastante antisocial llamado Hachiman Hikigaya y que tiene una distorsionada visión de la vida, aparte de no tener amigos ni mucho menos novia. Cuando ve a sus compañeros de clase hablando alegremente de sus vidas adolescentes, él murmura que son todos una panda de mentirosos. Cuando le preguntan por sus sueños para el futuro, su respuesta es: “no trabajar”. Un profesor sin embargo consigue enrrolar a Hachiman en el club de voluntariado, al que resulta que está también apuntada la chica más guapa del instituto, Yukino Yukinoshita.",
+                                "Yahari_Ore_no_Seishun_Love_Comedy_wa_Novela");
+                matrizProductos[1] =
+                        new Producto("1. Yahari Ore no Seishun Love Comedy wa Machigatteiru",
+                                "The romantic comedy revolves around a high school student named Hachiman quite antisocial Hikigaya and has a distorted view of life, apart from not having friends far bride. When he sees her classmates talking cheerfully of their adolescent lives, he mutters that are all a bunch of liars. When asked about their dreams for the future, your answer is “not working”. A teacher gets enrrolar however Hachiman club volunteer , who happens to be also targeted the prettiest girl in school , Yukino Yukinoshita .",
+                                "Yahari_Ore_no_Seishun_Love_Comedy_wa_Novela");
+
+                arrayProductos.push(matrizProductos);
+
+                var matrizProductos = new Array();
+                matrizProductos[0] =
+                        new Producto("2. Sword Art Online",
+                                "Escapar es imposible hasta terminar el juego; un game over significaría una verdadera \"muerte\". Sin saber la \"verdad\" de la siguiente generación del Multijugador Masivo Online, 'Sword Art Online(SAO)', con 10 mil usuarios unidos juntos abriendo las cortinas para esta cruel batalla a muerte. Participando solo en SAO, el protagonista Kirito ha aceptado inmediatamente la \"verdad\" de este MMO. Y, en el mundo del juego, un gigante castillo flotante llamado 'Aincrad', Kirito se distinguió a si mismo como un jugador solitario. Apuntando a terminar el juego al alcanzar la planta mas alta el solo continua avanzando arriesgadamente hasta que recibe una invitación a la fuerza de una guerrera y esgrimista experta, Asuna, con la cual tendra que hacer equipo.",
+                                "Sword_Art_Online_Novela");
+                matrizProductos[1] =
+                        new Producto("2. Sword Art Online",
+                                "Escape is impossible to finish the game ; an over game would mean a real \"death\" . Without knowing the \"truth\" of the next generation Massively Multiplayer Online, ' Sword Art Online (SAO)' , with 10 thousand users joined together by opening the curtains to this cruel battle to the death . Participating alone in SAO , protagonist Kirito was immediately accepted \"truth\" of this MMO . And in the game world , a giant floating castle called ' Aincrad ' Kirito distinguished himself as a solo player . Pointing to finish the game by reaching the highest single plant continues to advance boldly until it receives an invitation to the strength of a warrior and an expert fencer , Asuna , with which team will have to do .",
+                                "Sword_Art_Online_Novela");
+
+                arrayProductos.push(matrizProductos);
+
+                var matrizProductos = new Array();
+                matrizProductos[0] =
+                        new Producto("3. No Game No Life",
+                                "Los hermanos Sora y Shiro son un par de NEETs, concretamente se les define como hikikomori, quienes juntos forman a 『　　』, un jugador en línea invencible y una leyenda urbana. Ambos consideran al mundo real como un «Kusoge» traducido como «juego basura». Fueron invitados por un chico que se hace llamar «Dios» a su mundo de fantasía donde tiene prohibida toda violencia y guerra entre las dieciséis razas inteligentes viviendo allí; en lugar de ello, todo se decide a través de juegos. Los hermanos se encuentran a los aspirantes a salvadores de la humanidad (Imanity), quienes clasifican como decimosexto entre las razas y han sido reducidos a una única ciudad restante.",
+                                "No_Game_No_Life_Novela");
+                matrizProductos[1] =
+                        new Producto("3. No Game No Life",
+                                "The Sora and Shiro brothers are a pair of NEETs , they are specifically defined as hikikomori , who together formed 『　　』, a player invincible line and an urban legend. Both consider the real world as a «Kusoge» translated as «garbage game». They were invited by a guy who calls himself 'God' to his fantasy world where all violence and war is prohibited between sixteen intelligent races living there ; Instead , everything is decided through games . The brothers are aspiring saviors of mankind ( Imanity ) , who rank as the sixteenth between races and have been reduced to only remaining city.",
+                                "No_Game_No_Life_Novela");
+
+                arrayProductos.push(matrizProductos);
+                
+                var matrizProductos = new Array();
+                matrizProductos[0] =
+                        new Producto("4. Toaru Majutsu no Index",
+                                "La historia se ambienta en una ciudad de estudiantes superhumanos científicamente avanzados y en un mundo donde la magia es real. La mano derecha de Toma Kamijo, el “Imagine Breaker” negará toda la magia, poderes divinos o mentales, pero no su propia suerte. Un día encuentra una chica joven colgando de su balcón que resulta ser una monja de la inglesia de Inglaterra en cuya mente ha sido implementado el índice Librorium-Prohibitorum, es decir, todos los libros y textos sobre magia que la iglesia quitó de la circulación.",
+                                "Toaru_Majutsu_no_Index_Novela");
+                matrizProductos[1] =
+                        new Producto("4. Toaru Majutsu no Index",
+                                "The story is set in a city of scientifically advanced superhuman students and in a world where magic is real. The right hand of Toma Kamijo , the “Imagine Breaker” deny all magic, divine or mental powers , but not his own luck. Finds an hanging from his balcony that happens to be a nun inglesia of England in whose mind has been implemented Librorium - Prohibitorum index, ie , all books and texts on magic that the church removed from circulation young girl .",
+                                "Toaru_Majutsu_no_Index_Novela");
+
+                arrayProductos.push(matrizProductos);
+                
+                var matrizProductos = new Array();
+                matrizProductos[0] =
+                        new Producto("5. Koukyuu Rakuen Kyoujou - Harem League Baseball",
+                                "Descripción no encontrada",
+                                "Koukyuu_Rakuen_Kyuujou_Novela");
+                matrizProductos[1] =
+                        new Producto("5. Koukyuu Rakuen Kyoujou - Harem League Baseball",
+                                "Description not found",
+                                "Koukyuu_Rakuen_Kyuujou_Novela");
+
+                arrayProductos.push(matrizProductos);
+                
+                var matrizProductos = new Array();
+                matrizProductos[0] =
+                        new Producto("6. Zetsushinkai no Solaris",
+                                "Descripción no encontrada",
+                                "Zetsushinkai_no_Solaris_Novela");
+                matrizProductos[1] =
+                        new Producto("6. Zetsushinkai no Solaris",
+                                "Description not found",
+                                "Zetsushinkai_no_Solaris_Novela");
+
+                arrayProductos.push(matrizProductos);
+                
+                var matrizProductos = new Array();
+                matrizProductos[0] =
+                        new Producto("7. Escape Speed",
+                                "Descripción no encontrada",
+                                "Escape_Speed_Novela");
+                matrizProductos[1] =
+                        new Producto("7. Escape Speed",
+                                "Description not found",
+                                "Escape_Speed_Novela");
+
+                arrayProductos.push(matrizProductos);
+                
+                var matrizProductos = new Array();
+                matrizProductos[0] =
+                        new Producto("8. Toaru Hikuushi no Seiyaku",
+                                "Descripción no encontrada",
+                                "Toaru_Hikuushi_no_Seiyaku_Novela");
+                matrizProductos[1] =
+                        new Producto("8. Toaru Hikuushi no Seiyaku",
+                                "Description not found",
+                                "Toaru_Hikuushi_no_Seiyaku_Novela");
+
+                arrayProductos.push(matrizProductos);
+                
+                var matrizProductos = new Array();
+                matrizProductos[0] =
+                        new Producto("9. Kono Koi to, Sono Mirai",
+                                "Descripción no encontrada",
+                                "Kono_Koi_to_Sono_Mirai_Novela");
+                matrizProductos[1] =
+                        new Producto("9. Kono Koi to, Sono Mirai",
+                                "Description not found",
+                                "Kono_Koi_to_Sono_Mirai_Novela");
+
+                arrayProductos.push(matrizProductos);
+                
+                var matrizProductos = new Array();
+                matrizProductos[0] =
+                        new Producto("10. Tenkyou no Alderamin",
+                                "El Imperio Katjvarna y la República Kioka están en guerra , y Katjvarna actualmente está defendiendo su frontera contra los ataques de Kioka . Yatorishino es de una familia influyente en el imperio , y ella está tomando los exámenes oficiales de alto rango. Para asegurarse de que ella pasa en la parte superior , está convencida de perezoso, contra la guerra , chica loca Ikuta para tomar los exámenes , así y ayudarla, a cambio de un favor de su familia. La primera prueba , escrito va según lo previsto , y luego se dirigen fuera en un barco para la próxima . Por desgracia , el barco se hunde , y Yatorishino , Ikuta , algunos otros examinandos , y un misterioso , importante niña están varados tras las líneas enemigas!",
+                                "Tenkyou_no_Alderamin_Novela");
+                matrizProductos[1] =
+                        new Producto("10. Tenkyou no Alderamin",
+                                "The Katjvarna Empire and the Kioka Republic are at war, and Katjvarna is currently defending their border against Kioka's attacks. Yatorishino is from an influential family in the empire, and she's taking the high ranking officer exams. To make sure she passes at the top, she's convinced lazy, anti-war, girl-crazy Ikuta to take the exams as well and help her, in exchange for a favor from her family. The first, written test goes as planned, and then they head off on a boat for the next. Unfortunately, the boat sinks, and Yatorishino, Ikuta, some other examinees, and a mysterious, important little girl are stranded behind enemy lines!",
+                                "Tenkyou_no_Alderamin_Novela");
+
+                arrayProductos.push(matrizProductos);
+                
+
+                refreshListaProductos(0);
+            }
+            function refreshListaProductos(id) {
+
+                var original = document.querySelector("#CONTENEDOR1");
+                limpiarCapa(original);
+
+                for (var j = 0; j < 10; j++) {
+                    // Notificar los objetos al HTML
+                    var contenedor = document.querySelector("#CONTENEDOR1");
+                    var creoDiv = document.createElement("div");
+                    creoDiv.className = "divFoto";
+                    var creoDiv2 = document.createElement("div");
+                    creoDiv2.className = "divTitulo";
+                    var creoDiv3 = document.createElement("div");
+                    creoDiv3.className = "divDescripcion";
+
+                    var objProducto = arrayProductos[j];
+                    var nombreImagen = objProducto[id].getImagen();
+                    var titulo = objProducto[id].getNombre();
+                    var descripcionImagen = objProducto[id].getDescripcion();
+
+
+
+                    var img = "<img src='images/novelas/" + nombreImagen + ".jpg'/>";
+                    var nombre = "<h1>" + titulo + "</h1>";
+                    var descripcion = "<p>" + descripcionImagen + "</p>";
+
+                    creoDiv.innerHTML = img;
+                    creoDiv2.innerHTML = nombre;
+                    creoDiv3.innerHTML = descripcion;
+                    //creoDiv.appendChild(img);
+                    contenedor.appendChild(creoDiv2);
+                    contenedor.appendChild(creoDiv);
+                    contenedor.appendChild(creoDiv3);
+                }
+            }
+            function limpiarCapa(capaALimpiar) {
+                while (capaALimpiar.firstChild !== null) {
+                    capaALimpiar.removeChild(
+                            capaALimpiar.firstChild
+                            );
+                }
+            }
+
+            function loguearse() {
+                var usuario = document.querySelector("#usuario_login").value;
+                var pass = document.querySelector("#password_login").value;
+
+                //comprobamos que el usuario esta registrado
+                if (usuario !== "" && pass !== "") {
+                    //recuperamos los valores guardados en sessionStorage y los deserializamos para leerlos
+                    var usuarios = "David";
+                    var password = "david";
+
+                    if (usuarios === usuario && password === pass) {
+                        //colocamos el contenido de usuario logueado
+                        colocar_cuenta_logueado(usuario);
+
+                        alert("login correcto.");
+                    }
+                    else {
+                        alert("login incorrecto.");
+                    }
+                }
+            }
+
+            function colocar_cuenta_logueado(usuario) {
+                
+                var original = document.querySelector("#menu_de_acceso");
+                limpiarCapa(original);
+                
+                //colocamos los diferentes botones y textos para un usuario logueado
+                var login = document.querySelector("#menu_de_acceso");
+                var creoDiv = document.createElement("div");
+                var creoDiv2 = document.createElement("div");
+
+                var bienvenido = "<label id=\"et_log\" class=\"logueado\">Bienvenido " + usuario + "</label><br/>";
+                var salir = "<input type=\"button\" id=\"deslogin\" class=\"logueado\" value=\"Salir\"/ onclick=\"desloguearse()\">";
+
+                creoDiv2.innerHTML = bienvenido;
+                creoDiv.innerHTML = salir;
+                //creoDiv.appendChild(img);
+                login.appendChild(creoDiv2);
+                login.appendChild(creoDiv);
+            }
+            
+            //FUNCION QUE DESLOGUEA
+            function desloguearse(){
+                    
+                    var original = document.querySelector("#menu_de_acceso");
+                    limpiarCapa(original);
+
+                    //colocamos los diferentes botones y textos para un usuario logueado
+                    var deslogin = document.querySelector("#menu_de_acceso");
+                    var creoDiv = document.createElement("div");
+                    var creoDiv2 = document.createElement("div");
+                    var creoDiv3 = document.createElement("div");
+                    
+                    var usuario = "<label id=\"et_user\" class=\"etiqueta_login\">Usuario:&nbsp;&nbsp;</label> <input type=\"text\" id=\"usuario_login\"/><br/>";
+                    var password = "<label id=\"et_pass\" class=\"etiqueta_login\">Password:</label><input type=\"password\" id=\"password_login\"/><br/>";
+                    var acceder = "<input type=\"button\" id=\"login\" value=\"Acceder\"/ onclick=\"loguearse()\">";
+
+                    creoDiv.innerHTML = usuario;
+                    creoDiv2.innerHTML = password;
+                    creoDiv3.innerHTML = acceder;
+                    //creoDiv.appendChild(img);
+                    deslogin.appendChild(creoDiv);
+                    deslogin.appendChild(creoDiv2);
+                    deslogin.appendChild(creoDiv3);
+            }
+        </script>
+    </head>
+    <body onload="initComponents();" style="font-family: Ariel;">
+        <div class="contenedor" style="width: 90%;  margin:0 auto; overflow: hidden;">
+            <div id="header" style="width: 100%; height: 15%; margin-bottom: 3%; padding-top: 5%">
+                <a href="index.html"><img src="images/anime_Logo.jpg" class="logo"></a>
+                <div id="acceder">
+                    <div id="menu_de_acceso" class="menu_de_acceso">
+                        <label id="et_user" class="etiqueta_login">Usuario:&nbsp;&nbsp;</label> <input type="text" id="usuario_login"/><br/>
+                        <label id="et_pass" class="etiqueta_login">Password:</label><input type="password" id="password_login"/><br/>
+                        <input type="button" id="login" value="Acceder" onclick="loguearse()"/>
+                    </div>
+                </div>
+                <div id="espanyol" class="bandera" onclick="refreshListaProductos(0)">
+                    <img src="images/espanyol.jpg">
+                </div>
+                <div id="ingles" class="bandera" onclick="refreshListaProductos(1)">
+                    <img src="images/english.gif">
+                </div>
+            </div>
+            <div style="width: 90%;  margin:0 auto; overflow: hidden;"></div>
+            <div>    
+                <ul id="menuhorizontal" class="menuhorizontal">
+                    <li><a href="anime.html">ANIMES</a></li>
+                    <li><a href="mangas.html">MANGAS</a></li>
+                    <li><a href="novelaligera.html">NOVELAS LIGERA</a></li>
+                    <li><a href="juegos.html">JUEGOS</a></li>
+                </ul>
+            </div>
+            <br>
+            <div id="CONTENEDOR1" style="width: 90%; height: 20%; margin-left: 5%;">
+            </div>
+            <div style="width: 100%;  margin:0 auto; overflow: hidden;"></div>
+            <br>
+            <div id="input" style="width: 20%; height: 50%; float:bottom; margin-left: 37%;">
+                <input type="button" value="VER TOP" onclick="añadirImagenes();" style="width: 100%; height: 100%; float:left; ">
+            </div>
+            <div id="PIEDEPAGINA" style="padding-top: 5%;">
+                <table border="1" width="100%">
+                    <tr>
+                        <td style="text-align: center;" width="50%">ABOUT US</td>
+                        <td style="text-align: center;" width="50%">CONTACT US</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">Pagina diseñada para los fanaticos<br> del anime y los juegos</td>
+                        <td style="text-align: center;">Anime S.A.<br>C/Falsa 123 - España<br>Teléfono: 876-654-210</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

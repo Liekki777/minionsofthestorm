@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Trabajo 2º Evaulacion</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/estilos2.css" />
+        <script type="text/javascript" src="beans/Producto.js"></script>
+        <script type="text/javascript" src="services/Cargar.js"></script>
+        <script type="text/javascript" src="beans/Traductor.js"></script>
+        <style type="text/css">
+        </style>
+        <script type="text/javascript">
+            var arrayProductos = new Array();
+
+            function initComponents()
+            {
+                for (var i = 0; i < arrayProductos.length; i++)
+                {
+
+                    //var dive = document.getElementById("STATIC_caja" + i);
+                    var contenedor = document.querySelector("#CONTENEDOR1");
+                    var creoDiv = document.createElement("div");
+                    creoDiv.className = "divFoto";
+                    var creoDiv2 = document.createElement("div");
+                    creoDiv2.className = "divTitulo";
+                    var creoDiv3 = document.createElement("div");
+                    creoDiv3.className = "divTitulo";
+
+                    var objProducto = arrayProductos[j];
+                    var nombreImagen = objProducto.getImagen();
+                    var titulo = objProducto.getNombre();
+                    var descripcionImagen = objProducto.getDescripcion();
+
+
+                    var img = "<img src='images/" + nombreImagen + ".jpg'/>";
+                    var nombre = "<h1>" + titulo + "</h1>";
+                    var descripcion = "<p>" + descripcionImagen + "</p>";
+
+                    creoDiv.innerHTML = img;
+                    creoDiv2.innerHTML = nombre;
+                    creoDiv3.innerHTML = descripcion;
+                    //creoDiv.appendChild(img);
+                    contenedor.appendChild(creoDiv2);
+                    contenedor.appendChild(creoDiv);
+                    contenedor.appendChild(creoDiv3);
+                }
+
+            }
+
+            function añadirImagenes()
+            {
+
+                var matrizProductos = new Array();
+
+                matrizProductos[0] =
+                        new Producto("1. Death Note",
+                                "Light Yagami es un excelente estudiante japonés que ha tenido una vida un tanto aburrida. Esto cambia radicalmente cuando encuentra tirado en el patio de la escuela un cuaderno negro conocido como Death Note, perdido por un Shinigami llamado Ryuk. Cualquier humano cuyo nombre sea escrito en dicho cuaderno morirá; y, Light -luego de leer las instrucciones en el mismo- ha decidido utilizar este poder para crear un mundo sin criminales, \"perfecto\" según su visión. Cuando los criminales comienzan a morir de forma masiva y generalmente víctimas de ataque cardíaco, las autoridades envían al legendario detective L en busca del asesino. Con L pisándole los talones: podra mantener Light su propósito incluso arriesgando su vida.",
+                                "Death_Note_Anime");
+                matrizProductos[1] =
+                        new Producto("1. Death Note",
+                                "Light Yagami is an excellent Japanese student who has had a life one boring either . This changes dramatically when found lying on the school yard a black notebook known as Death Note, lost by a Shinigami named Ryuk . Any human whose name is written in this book shall die ; and Light -after reading the instructions on the same- have decided to use this power to create a world without criminals,\"perfect\" according to his vision . When criminals begin to die en masse and usually victims of heart attack, the authorities send the legendary detective L in search of the murderer . With L hot on his heels : Light may maintain its purpose even risking his life.",
+                                "Death_Note_Anime");
+
+                arrayProductos.push(matrizProductos);
+
+                var matrizProductos = new Array();
+                matrizProductos[0] =
+                        new Producto("2. Sword Art Online",
+                                "Escapar es imposible hasta terminar el juego; un game over significaría una verdadera \"muerte\". Sin saber la \"verdad\" de la siguiente generación del Multijugador Masivo Online, 'Sword Art Online(SAO)', con 10 mil usuarios unidos juntos abriendo las cortinas para esta cruel batalla a muerte. Participando solo en SAO, el protagonista Kirito ha aceptado inmediatamente la \"verdad\" de este MMO. Y, en el mundo del juego, un gigante castillo flotante llamado 'Aincrad', Kirito se distinguió a si mismo como un jugador solitario. Apuntando a terminar el juego al alcanzar la planta mas alta el solo continua avanzando arriesgadamente hasta que recibe una invitación a la fuerza de una guerrera y esgrimista experta, Asuna, con la cual tendra que hacer equipo.",
+                                "Sword_Art_Online_Anime");
+                matrizProductos[1] =
+                        new Producto("2. Sword Art Online",
+                                "Escape is impossible to finish the game ; an over game would mean a real \"death\" . Without knowing the \"truth\" of the next generation Massively Multiplayer Online, ' Sword Art Online (SAO)' , with 10 thousand users joined together by opening the curtains to this cruel battle to the death . Participating alone in SAO , protagonist Kirito was immediately accepted \"truth\" of this MMO . And in the game world , a giant floating castle called ' Aincrad ' Kirito distinguished himself as a solo player . Pointing to finish the game by reaching the highest single plant continues to advance boldly until it receives an invitation to the strength of a warrior and an expert fencer , Asuna , with which team will have to do .",
+                                "Sword_Art_Online_Anime");
+
+                arrayProductos.push(matrizProductos);
+
+                var matrizProductos = new Array();
+                matrizProductos[0] =
+                        new Producto("3. Shingeki no Kyojin ",
+                                "La historia nos traslada a un mundo en el que la humanidad estuvo a punto de ser exterminada cientos de años atrás por los Titanes. Los Titanes son seres enormes, parecen no ser inteligentes y devoran humanos. Lo peor es que parece que lo hacen por placer y no por alimentarse."
+
+                        +"Una pequeña parte de la humanidad ha conseguido sobrevivir protegiéndose con unos altísimos muros, más altos que el mayor de los Titanes. La ciudad vive su vida tranquila, y hace más de 100 años que ningún Titan aparece por allí."
+
+                        +"Eren y Mikasa son todavía unos adolescentes cuando ven algo horroroso: un Titan mucho mayor que todos los que la humanidad había conocido hasta el momento está destruyendo los muros de la ciudad, en ese momento la humanidad volverá a recordar el terror.",
+                                "Shingeki_no_Kyojin_Anime");
+                matrizProductos[1] =
+                        new Producto("3. Shingeki no Kyojin ",
+                                "The story takes us to a world in which humanity was about to be exterminated hundreds of years ago by the Titans. The Titans are enormous beings seem to be smart and eat humans. The worst thing is that it seems they do for pleasure and not for food."
+
+                        +"A small part of humanity has managed to survive with some high walls shielding , higher than the largest of the Titans. The city lives his quiet life , and more than 100 years ago that no Titan appears there."
+
+                        +"Eren and Mikasa are still teenagers when they see something shocking: a much larger Titan that all mankind had known so far is destroying the city walls , then humanity will remember the terror.",
+                                "Shingeki_no_Kyojin_Anime");
+
+                arrayProductos.push(matrizProductos);
+
+                var matrizProductos = new Array();
+                matrizProductos[0] =
+                        new Producto("4. Code Geass: Hangyaku no Lelouch",
+                                "El 10 de agosto de 2010 a.t.b, el Sacro Imperio de Britannia sobrepasó a las fuerzas japonesas y conquistó el país en menos de un mes, haciendo uso de sus armas robóticas, los Knightmare Frames. Japón perdió su libertad y derechos, y pasó a ser llamada ''Area 11 (eleven)''. Sus habitantes, ahora llamados ''Elevens'' fueron obligados a sobrevivir en ghettos. Sin embargo aún persisten grupos que se resisten y luchan contra el Imperio por la independencia de Japon."
+                                +"Luego de que su padre, el Emperador de Britannia, no hiciese nada para atrapar a los terroristas que asesinaron a su madre y lisiaron a su hermana, un niño llamado Lelouch juró destruir Britannia. Siete años más tarde en el area 11 conoce a una misteriosa chica, con la que realiza un contrato a cambio de un poder llamado ''Geass''. Con él, Lelouch finalmente tiene el poder que necesita para derrotar a Britannia y realizar sus dos deseos: vengar a su madre y construir un mundo en el.",
+                                "Code_Geass_Anime");
+                matrizProductos[1] =
+                        new Producto("4. Code Geass: Hangyaku no Lelouch",
+                                "On August 10, 2010 atb , the Holy Empire of Britannia overpowered Japanese forces and conquered the country in less than a month , using their robotic weapons, the Knightmare Frames. Japan lost its freedom and rights, and happened to be called ''Area 11 (eleven)' . Its inhabitants , now called ''Elevens'' were forced to survive in ghettos. However there are still groups that resist and fight the Empire for independence from Japan."
+                                + "After his father, the Emperor of Britannia, did nothing to catch the terrorists who murdered his mother and crippled his sister , a boy named Lelouch vowed to destroy Britannia. Seven years later in the area 11 meets a mysterious girl, with that contracts in exchange for a power called ''Geass''. With it, Lelouch finally has the power you need to defeat Britannia and fulfill their two wishes : to avenge his mother and build a world .",
+                                "Code_Geass_Anime");
+
+                arrayProductos.push(matrizProductos);
+
+                var matrizProductos = new Array();
+                matrizProductos[0] =
+                        new Producto("5. FullMetal Alchemist: Brotherhood",
+                                "La historia se centra en dos hermanos, Edward Elric y Alphonse Elric que rompieron el mayor tabú de la alquimia, la trasmutación humana al tratar de revivir a su fallecida madre; en consecuencia Edward pierde su pierna izquierda y Alphonse pierde todo su cuerpo, Edward para salvar a su hermano sella su alma en una gran armadura de hierro a cambio de su brazo derecho; ahora los dos con un nuevo objetivo buscan desesperadamente la piedra filosofal para poder regresar sus cuerpos a la normalidad...",
+                                "FullMetal_Alchemist2_Anime");
+                matrizProductos[1] =
+                        new Producto("5. FullMetal Alchemist: Brotherhood",
+                                "The story centers on two brothers , Edward Elric and Alphonse Elric who broke the biggest taboo of alchemy , human transmutation in trying to revive his dead mother ; consequently Edward loses his left leg and Alphonse loses his entire body , Edward to save his brother sealed his soul in a large iron armor in exchange for his right arm ; now both with a new target desperately seeking the Philosopher's Stone to return their bodies to normal ...",
+                                "FullMetal_Alchemist2_Anime");
+
+                arrayProductos.push(matrizProductos);
+
+                var matrizProductos = new Array();
+                matrizProductos[0] =
+                        new Producto("6. Naruto",
+                                "Naruto, un aprendiz de ninja de la Aldea Oculta de Konoha es un chico travieso que desea llegar a ser el Hokage de la aldea para demostrar a todos lo que vale. Lo que descubre al inicio de la historia es que la gente le mira con desconfianza porque en su interior está encerrado el demonio Kyubi que una vez destruyó la aldea, y que el anterior líder de la misma tuvo que encerrar en su cuerpo siendo aún muy pequeño, a coste de su vida. Aunque sus compañeros no saben esto, tampoco le aprecian porque es mal estudiante y siempre está haciendo bromas. Sin embargo, la forma de actuar y la determinación de Naruto demuestran a los demás que puede llegar muy lejos, y el recelo de los otros chicos se va disipando. Naruto y sus compañeros Sakura y Sasuke, junto a su maestro Kakashi tendrán que enfrentarse a una serie de combates y misiones a lo largo de la historia que les permitirán mejorar y crecer. Naruto se vera enfrentado a sus principales enemigos Akatsuki, Itachi y Kisame.",
+                                "Naruto_Anime");
+                matrizProductos[1] =
+                        new Producto("6. Naruto",
+                                "Naruto, an apprentice ninja from the Hidden Village of Konoha is a naughty boy who wants to become the Hokage of the village to show everyone what it's worth. What he discovers at the beginning of the story is that people look at you with suspicion because inside the Kyubi demon that once destroyed the village is enclosed , and the former leader of it had to lock in your body still very small , at the cost of his life. While his teammates did not know this, nor will appreciate because it is bad student and is always making jokes . However , the way you act and the determination of Naruto demonstrate to others that can go far , and suspicion of the other guys dissipates . Naruto and his teammates Sakura and Sasuke, Kakashi with his teacher will face a series of battles and missions throughout history that will enable them to improve and grow. Naruto vera faced their main enemies Akatsuki , Itachi and Kisame .",
+                                "Naruto_Anime");
+
+                arrayProductos.push(matrizProductos);
+
+                var matrizProductos = new Array();
+                matrizProductos[0] =
+                        new Producto("7. Angel Beats!",
+                                "Existe un mundo después de la muerte, en donde las almas de las personas cuya vida fue injusta, tienen una segunda oportunidad de alcanzar la paz, y así volver a nacer. Pero la verdad es que nadie sabe muy bien como funciona este lugar donde no existen las enfermedades y no se puede morir (al menos de la forma que nosotros entendemos como muerte). Debido a la confusión se crean 2 bandos en conflicto: el Shinda Sekai Sensen (SSS), que lucha contra las intenciones de Dios por la vida injusta que les designó; y el bando formado por Tenshi (Ángel), cuyo único interés al parecer es generar paz en este lugar. En este mundo aparece nuestro protagonista, Otonashi, quien sin recuerdos de su vida anterior, se embarca en una aventura donde forja amistades profundas.",
+                                "Angel_Beats!_Anime");
+                matrizProductos[1] =
+                        new Producto("7. Angel Beats!",
+                                "There is a world after death , where the souls of those whose life was unfair , have a second chance to achieve peace, and thus reborn. But the truth is that nobody knows how this place where there are no diseases and can not die (at least the way we understand as death). Because of the confusion 2 warring factions are created: the Shinda Sekai Sensen (SSS ) , which fights against God's intentions for the wrongful life that appointed them ; and the side formed by Tenshi ( Angel ) , whose only interest is apparently generate peace in this place . In this world our protagonist Otonashi , who has no memory of his previous life, embarks on an adventure where forge deep friendships appears .",
+                                "Angel_Beats!_Anime");
+
+                arrayProductos.push(matrizProductos);
+
+                var matrizProductos = new Array();
+                matrizProductos[0] =
+                        new Producto("8. Bleach",
+                                "Kurosaki Ichigo es un estudiante de instituto de 15 años, que tiene una peculiaridad: es capaz de ver, oír y hablar con fantasmas. Pero no sabe hasta dónde puede abarcar la clasificación de espíritus, ni lo que conlleva el saberlo. Un buen día, una extraña chica de pequeña estatura que viste ropas negras de samurai entra en su cuarto. Se llama Rukia Kuchiki, y es una Shinigami (Dios de la Muerte). Ante la incredulidad de Ichigo, le explica que su trabajo es mandar a las almas buenas o plus a un lugar llamado la Sociedad de Almas, y eliminar a las almas malignas o hollows. Luego junto a Inoue Orihime, Ishida Uryū y Sado Yasutora se veran envueltos en diferentes batallas, las cuales iran desarrollando sus diferentes habilidades que le otorgaran a cada uno su importancia en la serie.",
+                                "Bleach_Anime");
+                matrizProductos[1] =
+                        new Producto("8. Bleach",
+                                "Kurosaki Ichigo is a high school student 15 years , which has a peculiarity : it is able to see, hear and talk to ghosts. But do not know how far you can cover the classification of spirits, or which carries the know. One day, a strange girl of small stature who wears black clothes of samurai enters his room . Called Rukia Kuchiki , and is a Shinigami ( God of Death ) . To the disbelief of Ichigo , she explains that her job is sent to plus or good souls to a place called Soul Society , and eliminate the evil souls or hollows . Then with Inoue Orihime , Uryū Ishida and Sado Yasutora will look wrapped in different battles, which iran developing their different abilities to grant it to each his role in the series.",
+                                "Bleach_Anime");
+
+                arrayProductos.push(matrizProductos);
+
+                var matrizProductos = new Array();
+                matrizProductos[0] =
+                        new Producto("9. Elfen Lied",
+                                "Elfen Lied es un anime dirigido por Mamoru Kanbe basado en el manga del mismo nombre creado por Lynn Okamoto. Nos cuenta la historia de los diclonius, la siguiente mutación o evolución del homosapiens. Tiene escenas de desnudos, gore, violencia física y psicológica. La historia se basa especialmente en el personaje de Lucy/Nyuu, una diclonius abandonada por sus padres humanos al nacer, y despreciada constantemente gracias a sus cuernos por los demás humanos. Esto la lleva a despreciar y matar a cuanto ser no-diclonius encuentre, hasta que conoce a Kōta, un humano, y la vida de ambos cambia para siempre.",
+                                "Elfen_Lied_Anime");
+                matrizProductos[1] =
+                        new Producto("9. Elfen Lied",
+                                "Elfen Lied is directed by Mamoru Kanbe anime based on the manga of the same name created by Lynn Okamoto . It tells the story of diclonius , the next mutation or evolution of homo sapiens . It has nudity , gore, physical and psychological violence . The story is based especially on the character of Lucy / Nyuu a diclonius abandoned by their human parents at birth , and constantly scorned by his horns by other humans. This leads to despise and kill non- diclonius soon be found, until he meets Kota , a human , and both their lives changed forever.",
+                                "Elfen_Lied_Anime");
+
+                arrayProductos.push(matrizProductos);
+
+                var matrizProductos = new Array();
+                matrizProductos[0] =
+                        new Producto("10. FullMetal Alchemist",
+                                "Tras perder a su madre, Alphonse y Edward Elric tratan de revivirla usando la ciencia prohibida de la alquimia humana. Sin embargo, la alquimia opera bajo la teoría del cambio equivalente y romper el tabú de la alquimia humana acarrea un alto precio. Ed pierde una de sus piernas y Al su cuerpo. Ed logra sellar el alma de Al dentro de una gran armadura, a costa de su brazo. Años después, Ed (ahora con dos extremidades mecánicas) y Al (aún atrapado en la armadura) dejan su casa de la niñez, cada uno preocupado por la felicidad del otro. Ed, quien tuvo un talento y habilidad natural para la alquimia, se convierte en un alquimista con certificado nacional y pronto es conocido en todas partes como el “Alquimista Fullmetal”. El verdadero objetivo de ambos hermanos es buscar cualquier información sobre la legendaria Piedra Filosofal, con la esperanza de que ésta les permita recobrar sus cuerpos. Todas sus esperanzas descansan en la mítica piedra, que incluso puede no existir.",
+                                "FullMetal_Alchemist1_Anime");
+                matrizProductos[1] =
+                        new Producto("10. FullMetal Alchemist",
+                                "After losing their mother , Alphonse and Edward Elric attempt to revive her using the forbidden science of human alchemy. However , alchemy operates on the theory of equivalent change and breaking the human alchemy taboo carries a heavy price. Ed loses his leg and Al his body. Ed manages to seal Al's soul inside a big armor, at the cost of his arm. Years later , Ed ( now with two mechanical limbs ) and Al ( still trapped in the armor ) leave their childhood home , each concerned about the happiness of others . Ed , who had a natural talent and skill for alchemy , becomes nationally certified alchemist and is soon known everywhere as the ''Fullmetal Alchemist'' . The real goal of the brothers is to seek any information on the fabled Philosopher's Stone , hoping it will allow them to recover their bodies. All of their hopes rest on the mythical stone, which may not even exist.",
+                                "FullMetal_Alchemist1_Anime");
+
+                arrayProductos.push(matrizProductos);
+
+
+                refreshListaProductos(0);
+            }
+            function refreshListaProductos(id) {
+
+                var original = document.querySelector("#CONTENEDOR1");
+                limpiarCapa(original);
+
+                for (var j = 0; j < 10; j++) {
+                    // Notificar los objetos al HTML
+                    var contenedor = document.querySelector("#CONTENEDOR1");
+                    var creoDiv = document.createElement("div");
+                    creoDiv.className = "divFoto";
+                    var creoDiv2 = document.createElement("div");
+                    creoDiv2.className = "divTitulo";
+                    var creoDiv3 = document.createElement("div");
+                    creoDiv3.className = "divDescripcion";
+
+                    var objProducto = arrayProductos[j];
+                    var nombreImagen = objProducto[id].getImagen();
+                    var titulo = objProducto[id].getNombre();
+                    var descripcionImagen = objProducto[id].getDescripcion();
+
+
+
+                    var img = "<img src='images/animes/" + nombreImagen + ".jpg'/>";
+                    var nombre = "<h1>" + titulo + "</h1>";
+                    var descripcion = "<p>" + descripcionImagen + "</p>";
+
+                    creoDiv.innerHTML = img;
+                    creoDiv2.innerHTML = nombre;
+                    creoDiv3.innerHTML = descripcion;
+                    //creoDiv.appendChild(img);
+                    contenedor.appendChild(creoDiv2);
+                    contenedor.appendChild(creoDiv);
+                    contenedor.appendChild(creoDiv3);
+                }
+            }
+            function limpiarCapa(capaALimpiar) {
+                while (capaALimpiar.firstChild !== null) {
+                    capaALimpiar.removeChild(
+                            capaALimpiar.firstChild
+                            );
+                }
+            }
+
+            function loguearse() {
+                var usuario = document.querySelector("#usuario_login").value;
+                var pass = document.querySelector("#password_login").value;
+
+                //comprobamos que el usuario esta registrado
+                if (usuario !== "" && pass !== "") {
+                    //recuperamos los valores guardados en sessionStorage y los deserializamos para leerlos
+                    var usuarios = "David";
+                    var password = "david";
+
+                    if (usuarios === usuario && password === pass) {
+                        //colocamos el contenido de usuario logueado
+                        colocar_cuenta_logueado(usuario);
+
+                        alert("login correcto.");
+                    }
+                    else {
+                        alert("login incorrecto.");
+                    }
+                }
+            }
+
+            function colocar_cuenta_logueado(usuario) {
+
+                var original = document.querySelector("#menu_de_acceso");
+                limpiarCapa(original);
+
+                //colocamos los diferentes botones y textos para un usuario logueado
+                var login = document.querySelector("#menu_de_acceso");
+                var creoDiv = document.createElement("div");
+                var creoDiv2 = document.createElement("div");
+
+                var bienvenido = "<label id=\"et_log\" class=\"logueado\">Bienvenido " + usuario + "</label><br/>";
+                var salir = "<input type=\"button\" id=\"deslogin\" class=\"logueado\" value=\"Salir\"/ onclick=\"desloguearse()\">";
+
+                creoDiv2.innerHTML = bienvenido;
+                creoDiv.innerHTML = salir;
+                //creoDiv.appendChild(img);
+                login.appendChild(creoDiv2);
+                login.appendChild(creoDiv);
+            }
+
+            //FUNCION QUE DESLOGUEA
+            function desloguearse() {
+
+                var original = document.querySelector("#menu_de_acceso");
+                limpiarCapa(original);
+
+                //colocamos los diferentes botones y textos para un usuario logueado
+                var deslogin = document.querySelector("#menu_de_acceso");
+                var creoDiv = document.createElement("div");
+                var creoDiv2 = document.createElement("div");
+                var creoDiv3 = document.createElement("div");
+
+                var usuario = "<label id=\"et_user\" class=\"etiqueta_login\">Usuario:&nbsp;&nbsp;</label> <input type=\"text\" id=\"usuario_login\"/><br/>";
+                var password = "<label id=\"et_pass\" class=\"etiqueta_login\">Password:</label><input type=\"password\" id=\"password_login\"/><br/>";
+                var acceder = "<input type=\"button\" id=\"login\" value=\"Acceder\"/ onclick=\"loguearse()\">";
+
+                creoDiv.innerHTML = usuario;
+                creoDiv2.innerHTML = password;
+                creoDiv3.innerHTML = acceder;
+                //creoDiv.appendChild(img);
+                deslogin.appendChild(creoDiv);
+                deslogin.appendChild(creoDiv2);
+                deslogin.appendChild(creoDiv3);
+            }
+        </script>
+    </head>
+    <body onload="initComponents();" style="font-family: Ariel;">
+        <div class="contenedor" style="width: 90%;  margin:0 auto; overflow: hidden;">
+            <div id="header" style="width: 100%; height: 15%; margin-bottom: 3%; padding-top: 5%">
+                <a href="index.html"><img src="images/anime_Logo.jpg" class="logo"></a>
+                <div id="acceder">
+                    <div id="menu_de_acceso" class="menu_de_acceso">
+                        <label id="et_user" class="etiqueta_login">Usuario:&nbsp;&nbsp;</label> <input type="text" id="usuario_login"/><br/>
+                        <label id="et_pass" class="etiqueta_login">Password:</label><input type="password" id="password_login"/><br/>
+                        <input type="button" id="login" value="Acceder" onclick="loguearse()"/>
+                    </div>
+                </div>
+                <div id="espanyol" class="bandera" onclick="refreshListaProductos(0)">
+                    <img src="images/espanyol.jpg">
+                </div>
+                <div id="ingles" class="bandera" onclick="refreshListaProductos(1)">
+                    <img src="images/english.gif">
+                </div>
+            </div>
+            <div style="width: 90%;  margin:0 auto; overflow: hidden;"></div>
+            <div>    
+                <ul id="menuhorizontal" class="menuhorizontal">
+                    <li><a href="anime.html">ANIMES</a></li>
+                    <li><a href="mangas.html">MANGAS</a></li>
+                    <li><a href="novelaligera.html">NOVELAS LIGERA</a></li>
+                    <li><a href="juegos.html">JUEGOS</a></li>
+                </ul>
+            </div>
+            <br>
+            <div id="CONTENEDOR1" style="width: 90%; height: 20%; margin-left: 5%;">
+            </div>
+            <div style="width: 100%;  margin:0 auto; overflow: hidden;"></div>
+            <br>
+            <div id="input" style="width: 20%; height: 50%; float:bottom; margin-left: 37%;">
+                <input type="button" value="VER TOP" onclick="añadirImagenes();" style="width: 100%; height: 100%; float:left; ">
+            </div>
+            <div id="PIEDEPAGINA" style="padding-top: 5%;">
+                <table border="1" width="100%">
+                    <tr>
+                        <td style="text-align: center;" width="50%">ABOUT US</td>
+                        <td style="text-align: center;" width="50%">CONTACT US</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">Pagina diseñada para los fanaticos<br> del anime y los juegos</td>
+                        <td style="text-align: center;">Anime S.A.<br>C/Falsa 123 - España<br>Teléfono: 876-654-210</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

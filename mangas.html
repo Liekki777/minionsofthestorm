@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Trabajo 2º Evaulacion</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/estilos2.css" />
+        <script type="text/javascript" src="beans/Producto.js"></script>
+        <script type="text/javascript" src="services/Cargar.js"></script>
+        <script type="text/javascript" src="beans/Traductor.js"></script>
+        <style type="text/css">
+        </style>
+        <script type="text/javascript">
+            var arrayProductos = new Array();
+
+            function initComponents()
+            {
+                for (var i = 0; i < arrayProductos.length; i++)
+                {
+
+                    //var dive = document.getElementById("STATIC_caja" + i);
+                    var contenedor = document.querySelector("#CONTENEDOR1");
+                    var creoDiv = document.createElement("div");
+                    creoDiv.className = "divFoto";
+                    var creoDiv2 = document.createElement("div");
+                    creoDiv2.className = "divTitulo";
+                    var creoDiv3 = document.createElement("div");
+                    creoDiv3.className = "divTitulo";
+
+                    var objProducto = arrayProductos[j];
+                    var nombreImagen = objProducto.getImagen();
+                    var titulo = objProducto.getNombre();
+                    var descripcionImagen = objProducto.getDescripcion();
+
+
+                    var img = "<img src='images/" + nombreImagen + ".jpg'/>";
+                    var nombre = "<h1>" + titulo + "</h1>";
+                    var descripcion = "<p>" + descripcionImagen + "</p>";
+
+                    creoDiv.innerHTML = img;
+                    creoDiv2.innerHTML = nombre;
+                    creoDiv3.innerHTML = descripcion;
+                    //creoDiv.appendChild(img);
+                    contenedor.appendChild(creoDiv2);
+                    contenedor.appendChild(creoDiv);
+                    contenedor.appendChild(creoDiv3);
+                }
+
+            }
+
+            function añadirImagenes()
+            {
+
+                var matrizProductos = new Array();
+
+                matrizProductos[0] =
+                        new Producto("1. Naruto",
+                                "Naruto, un aprendiz de ninja de la Aldea Oculta de Konoha es un chico travieso que desea llegar a ser el Hokage de la aldea para demostrar a todos lo que vale. Lo que descubre al inicio de la historia es que la gente le mira con desconfianza porque en su interior está encerrado el demonio Kyubi que una vez destruyó la aldea, y que el anterior líder de la misma tuvo que encerrar en su cuerpo siendo aún muy pequeño, a coste de su vida. Aunque sus compañeros no saben esto, tampoco le aprecian porque es mal estudiante y siempre está haciendo bromas. Sin embargo, la forma de actuar y la determinación de Naruto demuestran a los demás que puede llegar muy lejos, y el recelo de los otros chicos se va disipando. Naruto y sus compañeros Sakura y Sasuke, junto a su maestro Kakashi tendrán que enfrentarse a una serie de combates y misiones a lo largo de la historia que les permitirán mejorar y crecer. Naruto se vera enfrentado a sus principales enemigos Akatsuki, Itachi y Kisame.",
+                                "Naruto_Mangas");
+                matrizProductos[1] =
+                        new Producto("1. Naruto",
+                                "Naruto, an apprentice ninja from the Hidden Village of Konoha is a naughty boy who wants to become the Hokage of the village to show everyone what it's worth. What he discovers at the beginning of the story is that people look at you with suspicion because inside the Kyubi demon that once destroyed the village is enclosed , and the former leader of it had to lock in your body still very small , at the cost of his life. While his teammates did not know this, nor will appreciate because it is bad student and is always making jokes . However , the way you act and the determination of Naruto demonstrate to others that can go far , and suspicion of the other guys dissipates . Naruto and his teammates Sakura and Sasuke, Kakashi with his teacher will face a series of battles and missions throughout history that will enable them to improve and grow. Naruto vera faced their main enemies Akatsuki , Itachi and Kisame .",
+                                "Naruto_Mangas");
+
+                arrayProductos.push(matrizProductos);
+
+                var matrizProductos = new Array();
+                matrizProductos[0] =
+                        new Producto("2. Bleach",
+                                "Kurosaki Ichigo es un estudiante de instituto de 15 años, que tiene una peculiaridad: es capaz de ver, oír y hablar con fantasmas. Pero no sabe hasta dónde puede abarcar la clasificación de espíritus, ni lo que conlleva el saberlo. Un buen día, una extraña chica de pequeña estatura que viste ropas negras de samurai entra en su cuarto. Se llama Rukia Kuchiki, y es una Shinigami (Dios de la Muerte). Ante la incredulidad de Ichigo, le explica que su trabajo es mandar a las almas buenas o plus a un lugar llamado la Sociedad de Almas, y eliminar a las almas malignas o hollows. Luego junto a Inoue Orihime, Ishida Uryū y Sado Yasutora se veran envueltos en diferentes batallas, las cuales iran desarrollando sus diferentes habilidades que le otorgaran a cada uno su importancia en la serie.",
+                                "Bleach_Mangas");
+                matrizProductos[1] =
+                        new Producto("2. Bleach",
+                                "Kurosaki Ichigo is a high school student 15 years , which has a peculiarity : it is able to see, hear and talk to ghosts. But do not know how far you can cover the classification of spirits, or which carries the know. One day, a strange girl of small stature who wears black clothes of samurai enters his room . Called Rukia Kuchiki , and is a Shinigami ( God of Death ) . To the disbelief of Ichigo , she explains that her job is sent to plus or good souls to a place called Soul Society , and eliminate the evil souls or hollows . Then with Inoue Orihime , Uryū Ishida and Sado Yasutora will look wrapped in different battles, which iran developing their different abilities to grant it to each his role in the series.",
+                                "Bleach_Mangas");
+
+                arrayProductos.push(matrizProductos);
+
+                var matrizProductos = new Array();
+                matrizProductos[0] =
+                        new Producto("3. Death Note",
+                                "Light Yagami es un excelente estudiante japonés que ha tenido una vida un tanto aburrida. Esto cambia radicalmente cuando encuentra tirado en el patio de la escuela un cuaderno negro conocido como Death Note, perdido por un Shinigami llamado Ryuk. Cualquier humano cuyo nombre sea escrito en dicho cuaderno morirá; y, Light -luego de leer las instrucciones en el mismo- ha decidido utilizar este poder para crear un mundo sin criminales, \"perfecto\" según su visión. Cuando los criminales comienzan a morir de forma masiva y generalmente víctimas de ataque cardíaco, las autoridades envían al legendario detective L en busca del asesino. Con L pisándole los talones: podra mantener Light su propósito incluso arriesgando su vida.",
+                                "Death_Note_Mangas");
+                matrizProductos[1] =
+                        new Producto("3. Death Note",
+                                "Light Yagami is an excellent Japanese student who has had a life one boring either . This changes dramatically when found lying on the school yard a black notebook known as Death Note, lost by a Shinigami named Ryuk . Any human whose name is written in this book shall die ; and Light -after reading the instructions on the same- have decided to use this power to create a world without criminals,\"perfect\" according to his vision . When criminals begin to die en masse and usually victims of heart attack, the authorities send the legendary detective L in search of the murderer . With L hot on his heels : Light may maintain its purpose even risking his life.",
+                                "Death_Note_Mangas");
+
+                arrayProductos.push(matrizProductos);
+                
+                var matrizProductos = new Array();
+                matrizProductos[0] =
+                        new Producto("4. One Piece",
+                                "Una historia épica de piratas, donde narra la historia de ''Monkey D. Luffy'' quien cuando tenia 7 años, comió accidentalmente una ''Akuma no mi''(Fruta del diablo) la cual le convirtió en un hombre de goma. Por otra parte ''Gol D. Roger'' conocido como ''El rey de los Piratas'' quien fuera ejecutado por la Marine, habló antes de morir, acerca de su mayor tesoro,el ''One Piece'' escondido en la ''Gran line''. Esta noticia desató la gran era de los piratas lanzando a incontables piratas a ese lugar, en busca del ''One Piece'' el tesoro perdido. Diez años después, Luffy inspirado en ''Gol D. Roger'' y un pirata de nombre Akagami no Shanks (Shanks el pelirrojo) se convierte en pirata deseando ser el próximo ''Rey de los Piratas'' y zarpar para conocer amigos y tener aventuras con ellos, teniendo como meta encontrar el ''One Piece''.",
+                                "One_Piece_Mangas");
+                matrizProductos[1] =
+                        new Producto("4. One Piece",
+                                "An epic tale of pirates , which tells the story of ''Monkey D. Luffy'' who when he was 7 years old, accidentally ate a ''Akuma no mi'' ( Devil Fruit ) which made ​​him a rubber man . Moreover ''Gol D. Roger'' known as ''King of the Pirates'' who was executed by the Marine, spoke before he died, about his greatest treasure , the ''One Piece'' hidden in the ''Great line''. The news sparked the great era of pirates throwing countless pirates to that place, in search of the ''One Piece'' lost treasure . Ten years later, Luffy inspired by ''Gol D. Roger'' and a pirate name Akagami no Shanks ( Shanks the redhead ) becomes pirate wanting to be the next ''Pirate King'' and sail to meet friends and have adventures with them , aiming to find the ''One Piece''.",
+                                "One_Piece_Mangas");
+
+                arrayProductos.push(matrizProductos);
+                
+                var matrizProductos = new Array();
+                matrizProductos[0] =
+                        new Producto("5. Fairy Tail",
+                                "Fairy Tail cuenta la historia de un joven mago llamado Natsu en la búsqueda de su maestro y padre adoptivo Igneel que resulta ser un dragón. Por ello se unió a Fairy Tail, un gremio de magos que es famoso por los destrozos y daños que provocan en diversas ciudades (lo cual no debería ser así). El mundo de Fairy Tail gira alrededor de los magos (los cuales poco tienen que ver con la idea general del mago común) que realizan encargos a cambio de dinero, similar a un cazarecompensas. Natsu conoce a Lucy, una guapa muchacha cuyo sueño era ingresar a un gremio de magos, específicamente, a Fairy Tail, lo cual consigue gracias a la ayuda de Natsu. De ahí en adelante, la historia sigue los movimientos de esta pareja de magos los cuales se ven envueltos en un sin número de aventuras antes de conseguir la meta final de encontrar a Igneel.",
+                                "Fairy_Tail_Mangas");
+                matrizProductos[1] =
+                        new Producto("5. Fairy Tail",
+                                "Fairy Tail tells the story of a young wizard named Natsu in search of his master and adoptive father Igneel who happens to be a dragon. Therefore he joined Fairy Tail, a guild of wizards who is famous for the destruction and damage caused in various cities (which should not be) . The world revolves around Fairy Tail mages ( which have little to do with the general idea of the common wizard) to place orders for cash , like a bounty hunter . Natsu met Lucy , a beautiful girl whose dream was to join a guild of wizards, specifically , to Fairy Tail , which achieved thanks to the help of Natsu . Thereafter , the story follows the movements of this pair of magicians who are involved in a number of adventures before achieving the ultimate goal of finding Igneel .",
+                                "Fairy_Tail_Mangas");
+
+                arrayProductos.push(matrizProductos);
+                
+                var matrizProductos = new Array();
+                matrizProductos[0] =
+                        new Producto("6. Shingeki no Kyojin",
+                                "La historia nos traslada a un mundo en el que la humanidad estuvo a punto de ser exterminada cientos de años atrás por los Titanes. Los Titanes son seres enormes, parecen no ser inteligentes y devoran humanos. Lo peor es que parece que lo hacen por placer y no por alimentarse."
+
+                        +"Una pequeña parte de la humanidad ha conseguido sobrevivir protegiéndose con unos altísimos muros, más altos que el mayor de los Titanes. La ciudad vive su vida tranquila, y hace más de 100 años que ningún Titan aparece por allí."
+
+                        +"Eren y Mikasa son todavía unos adolescentes cuando ven algo horroroso: un Titan mucho mayor que todos los que la humanidad había conocido hasta el momento está destruyendo los muros de la ciudad, en ese momento la humanidad volverá a recordar el terror.",
+                                "Shingeki_no_Kyojin_Mangas");
+                matrizProductos[1] =
+                        new Producto("6. Shingeki no Kyojin",
+                                "The story takes us to a world in which humanity was about to be exterminated hundreds of years ago by the Titans. The Titans are enormous beings seem to be smart and eat humans. The worst thing is that it seems they do for pleasure and not for food."
+
+                        +"A small part of humanity has managed to survive with some high walls shielding , higher than the largest of the Titans. The city lives his quiet life , and more than 100 years ago that no Titan appears there."
+
+                        +"Eren and Mikasa are still teenagers when they see something shocking: a much larger Titan that all mankind had known so far is destroying the city walls , then humanity will remember the terror.",
+                                "Shingeki_no_Kyojin_Mangas");
+
+                arrayProductos.push(matrizProductos);
+                
+                var matrizProductos = new Array();
+                matrizProductos[0] =
+                        new Producto("7. FullMetal Alchemist",
+                                "Tras perder a su madre, Alphonse y Edward Elric tratan de revivirla usando la ciencia prohibida de la alquimia humana. Sin embargo, la alquimia opera bajo la teoría del cambio equivalente y romper el tabú de la alquimia humana acarrea un alto precio. Ed pierde una de sus piernas y Al su cuerpo. Ed logra sellar el alma de Al dentro de una gran armadura, a costa de su brazo. Años después, Ed (ahora con dos extremidades mecánicas) y Al (aún atrapado en la armadura) dejan su casa de la niñez, cada uno preocupado por la felicidad del otro. Ed, quien tuvo un talento y habilidad natural para la alquimia, se convierte en un alquimista con certificado nacional y pronto es conocido en todas partes como el “Alquimista Fullmetal”. El verdadero objetivo de ambos hermanos es buscar cualquier información sobre la legendaria Piedra Filosofal, con la esperanza de que ésta les permita recobrar sus cuerpos. Todas sus esperanzas descansan en la mítica piedra, que incluso puede no existir.",
+                                "Fullmetal_Alchemist_Mangas");
+                matrizProductos[1] =
+                        new Producto("7. FullMetal Alchemist",
+                                "After losing their mother , Alphonse and Edward Elric attempt to revive her using the forbidden science of human alchemy. However , alchemy operates on the theory of equivalent change and breaking the human alchemy taboo carries a heavy price. Ed loses his leg and Al his body. Ed manages to seal Al's soul inside a big armor, at the cost of his arm. Years later , Ed ( now with two mechanical limbs ) and Al ( still trapped in the armor ) leave their childhood home , each concerned about the happiness of others . Ed , who had a natural talent and skill for alchemy , becomes nationally certified alchemist and is soon known everywhere as the ''Fullmetal Alchemist'' . The real goal of the brothers is to seek any information on the fabled Philosopher's Stone , hoping it will allow them to recover their bodies. All of their hopes rest on the mythical stone, which may not even exist.",
+                                "Fullmetal_Alchemist_Mangas");
+
+                arrayProductos.push(matrizProductos);
+                
+                var matrizProductos = new Array();
+                matrizProductos[0] =
+                        new Producto("8. Berserk",
+                                "Guts es un guerrero que lleva una espada mas grande que él, tiene una fuerza inmensa pues puede blandirla con facilidad. Es un mercenario, al que solo le importa luchar. Un dia conoce a Griffith, un caballero líder de una banda conocida como La Banda del Halcón. Guts le reta y Griffith acepta a cambio de que si le vence, él se unirá a su banda. Guts es vencido y aunque no lo acepta termina por unirse a la banda. Poco a poco la banda de mercenarios va cogiendo fama al ganar importantes batallas, todo apunta a que el objetivo de Griffith de poseer su propio reino se hará realidad. Pero la tierra de Midland esconde muchos secretos...",
+                                "Berserk_Mangas");
+                matrizProductos[1] =
+                        new Producto("8. Berserk",
+                                "Guts is a warrior carrying a sword bigger than he has an immense power it can wield it with ease. He is a mercenary , who only cares fight. One day he meets Griffith, a leader of a band known as The Band of the Hawk gentleman. Guts and Griffith accepts challenges you to change that if he wins, he will join his band . Guts is defeated and although not accept ends up joining the band . Gradually the band of mercenaries is gathering fame by winning important battles , it seems that the goal of Griffith of owning their own kingdom will come true. But the land of Midland hides many secrets ...",
+                                "Berserk_Mangas");
+
+                arrayProductos.push(matrizProductos);
+                
+                var matrizProductos = new Array();
+                matrizProductos[0] =
+                        new Producto("9. D.Gray-Man",
+                                "La historia se centra en el joven Allen Walker, un exorcista, durante un imaginario siglo XIX en Europa. Allen se convierte en miembro de la Orden Negra, una organización religiosa integrada por exorcistas de todo el mundo, la cual está vinculada al Vaticano. La misión de dicha organización es detener al Conde del Milenio, una malvada entidad demoníaca que pretende limpiar el mundo destruyendo a la humanidad, haciendo uso de sus armas llamadas Akuma. Los exorcistas son personas compatibles con la Inocencia, una sustancia divina creada en el pasado. Se dice que hay 109 trozos de Inocencia esparcidos por todo el mundo, una vez que la Inocencia encuentra a su persona compatible, evoluciona en un arma anti-Akuma. Esto se convierte en una carrera entre la Orden Negra y el Conde del milenio y sus aliados por conseguir la Inocencia.",
+                                "DGray_Man_Mangas");
+                matrizProductos[1] =
+                        new Producto("9. D.Gray-Man",
+                                "The story centers on a young Allen Walker, an exorcist , for an imaginary nineteenth century Europe. Allen becomes a member of the Black Order , a religious organization composed of exorcists around the world , which is linked to the Vatican. The mission of this organization is to stop the Millennium Earl , an evil demonic entity that seeks to cleanse the world destroying humanity , using their weapons called Akuma . The exorcists are compatible with the Innocence, a divine substance created in the past people. It is said that there are 109 pieces of Innocence scattered around the world , once the Innocence finds her support person , evolves into an anti - Akuma weapon. This becomes a race between the Black Order and the Millennium Earl and his allies to get Innocence.",
+                                "DGray_Man_Mangas");
+
+                arrayProductos.push(matrizProductos);
+                
+                var matrizProductos = new Array();
+                matrizProductos[0] =
+                        new Producto("10. Deadman Wonderland",
+                                "Diez años han pasado desde 'El Gran Terremoto de Tokyo', desastre masivo natural que hundió más del 70 por ciento de Tokio en el océano. Ganta Igarashi es un estudiante de escuela secundaria medio de 14 años en la Prefectura Nagano. Ganta es un sobreviviente del terremoto, pero él no tiene ninguna memoria del desastre y simplemente desea jugar el fútbol y vivir una vida normal. Todo cambió un día cuando un hombre misterioso cubierto en sangre aparece fuera de su ventana de aula. 'El Hombre Rojo' mata a los compañeros de clase de Ganta, pero extrañamente lo deja vivo después del incrustar un cristal carmesí en su pecho. La vida de Ganta va de mal en peor cuando él es culpado por los espantosos asesinatos y condenado a cadena perpetua en 'Deadman Wonderland'.",
+                                "Deadman_Wonderland_Mangas");
+                matrizProductos[1] =
+                        new Producto("10. Deadman Wonderland",
+                                "Ten years have passed since 'The Great Tokyo Earthquake', natural massive disaster that sank more than 70 percent of Tokyo in the ocean. Ganta Igarashi is a high school student average of 14 years in Nagano Prefecture . Ganta is a survivor of the earthquake , but he has no memory of the disaster and just want to play football and live a normal life . Everything changed one day when a mysterious man covered in blood appears outside his classroom window . 'The Red Man ' kills the classmates of Ganta , but leaves strangely alive after a crimson glass embedded in his chest. Ganta 's life goes from bad to worse when he is blamed for the gruesome murders and sentenced to life imprisonment in ' Deadman Wonderland '.",
+                                "Deadman_Wonderland_Mangas");
+
+                arrayProductos.push(matrizProductos);
+                
+
+                refreshListaProductos(0);
+            }
+            function refreshListaProductos(id) {
+
+                var original = document.querySelector("#CONTENEDOR1");
+                limpiarCapa(original);
+
+                for (var j = 0; j < 10; j++) {
+                    // Notificar los objetos al HTML
+                    var contenedor = document.querySelector("#CONTENEDOR1");
+                    var creoDiv = document.createElement("div");
+                    creoDiv.className = "divFoto";
+                    var creoDiv2 = document.createElement("div");
+                    creoDiv2.className = "divTitulo";
+                    var creoDiv3 = document.createElement("div");
+                    creoDiv3.className = "divDescripcion";
+
+                    var objProducto = arrayProductos[j];
+                    var nombreImagen = objProducto[id].getImagen();
+                    var titulo = objProducto[id].getNombre();
+                    var descripcionImagen = objProducto[id].getDescripcion();
+
+
+
+                    var img = "<img src='images/mangas/" + nombreImagen + ".jpg'/>";
+                    var nombre = "<h1>" + titulo + "</h1>";
+                    var descripcion = "<p>" + descripcionImagen + "</p>";
+
+                    creoDiv.innerHTML = img;
+                    creoDiv2.innerHTML = nombre;
+                    creoDiv3.innerHTML = descripcion;
+                    //creoDiv.appendChild(img);
+                    contenedor.appendChild(creoDiv2);
+                    contenedor.appendChild(creoDiv);
+                    contenedor.appendChild(creoDiv3);
+                }
+            }
+            function limpiarCapa(capaALimpiar) {
+                while (capaALimpiar.firstChild !== null) {
+                    capaALimpiar.removeChild(
+                            capaALimpiar.firstChild
+                            );
+                }
+            }
+
+            function loguearse() {
+                var usuario = document.querySelector("#usuario_login").value;
+                var pass = document.querySelector("#password_login").value;
+
+                //comprobamos que el usuario esta registrado
+                if (usuario !== "" && pass !== "") {
+                    //recuperamos los valores guardados en sessionStorage y los deserializamos para leerlos
+                    var usuarios = "David";
+                    var password = "david";
+
+                    if (usuarios === usuario && password === pass) {
+                        //colocamos el contenido de usuario logueado
+                        colocar_cuenta_logueado(usuario);
+
+                        alert("login correcto.");
+                    }
+                    else {
+                        alert("login incorrecto.");
+                    }
+                }
+            }
+
+            function colocar_cuenta_logueado(usuario) {
+                
+                var original = document.querySelector("#menu_de_acceso");
+                limpiarCapa(original);
+                
+                //colocamos los diferentes botones y textos para un usuario logueado
+                var login = document.querySelector("#menu_de_acceso");
+                var creoDiv = document.createElement("div");
+                var creoDiv2 = document.createElement("div");
+
+                var bienvenido = "<label id=\"et_log\" class=\"logueado\">Bienvenido " + usuario + "</label><br/>";
+                var salir = "<input type=\"button\" id=\"deslogin\" class=\"logueado\" value=\"Salir\"/ onclick=\"desloguearse()\">";
+
+                creoDiv2.innerHTML = bienvenido;
+                creoDiv.innerHTML = salir;
+                //creoDiv.appendChild(img);
+                login.appendChild(creoDiv2);
+                login.appendChild(creoDiv);
+            }
+            
+            //FUNCION QUE DESLOGUEA
+            function desloguearse(){
+                    
+                    var original = document.querySelector("#menu_de_acceso");
+                    limpiarCapa(original);
+
+                    //colocamos los diferentes botones y textos para un usuario logueado
+                    var deslogin = document.querySelector("#menu_de_acceso");
+                    var creoDiv = document.createElement("div");
+                    var creoDiv2 = document.createElement("div");
+                    var creoDiv3 = document.createElement("div");
+                    
+                    var usuario = "<label id=\"et_user\" class=\"etiqueta_login\">Usuario:&nbsp;&nbsp;</label> <input type=\"text\" id=\"usuario_login\"/><br/>";
+                    var password = "<label id=\"et_pass\" class=\"etiqueta_login\">Password:</label><input type=\"password\" id=\"password_login\"/><br/>";
+                    var acceder = "<input type=\"button\" id=\"login\" value=\"Acceder\"/ onclick=\"loguearse()\">";
+
+                    creoDiv.innerHTML = usuario;
+                    creoDiv2.innerHTML = password;
+                    creoDiv3.innerHTML = acceder;
+                    //creoDiv.appendChild(img);
+                    deslogin.appendChild(creoDiv);
+                    deslogin.appendChild(creoDiv2);
+                    deslogin.appendChild(creoDiv3);
+            }
+
+        </script>
+    </head>
+    <body onload="initComponents();" style="font-family: Ariel;">
+        <div class="contenedor" style="width: 90%;  margin:0 auto; overflow: hidden;">
+            <div id="header" style="width: 100%; height: 15%; margin-bottom: 3%; padding-top: 5%">
+                <a href="index.html"><img src="images/anime_Logo.jpg" class="logo"></a>
+                <div id="acceder">
+                    <div id="menu_de_acceso" class="menu_de_acceso">
+                        <label id="et_user" class="etiqueta_login">Usuario:&nbsp;&nbsp;</label> <input type="text" id="usuario_login"/><br/>
+                        <label id="et_pass" class="etiqueta_login">Password:</label><input type="password" id="password_login"/><br/>
+                        <input type="button" id="login" value="Acceder" onclick="loguearse()"/>
+                    </div>
+                </div>
+                <div id="espanyol" class="bandera" onclick="refreshListaProductos(0)">
+                    <img src="images/espanyol.jpg">
+                </div>
+                <div id="ingles" class="bandera" onclick="refreshListaProductos(1)">
+                    <img src="images/english.gif">
+                </div>
+            </div>
+            <div style="width: 90%;  margin:0 auto; overflow: hidden;"></div>
+            <div>    
+                <ul id="menuhorizontal" class="menuhorizontal">
+                    <li><a href="anime.html">ANIMES</a></li>
+                    <li><a href="mangas.html">MANGAS</a></li>
+                    <li><a href="novelaligera.html">NOVELAS LIGERA</a></li>
+                    <li><a href="juegos.html">JUEGOS</a></li>
+                </ul>
+            </div>
+            <br>
+            <div id="CONTENEDOR1" style="width: 90%; height: 20%; margin-left: 5%;">
+            </div>
+            <div style="width: 100%;  margin:0 auto; overflow: hidden;"></div>
+            <br>
+            <div id="input" style="width: 20%; height: 50%; float:bottom; margin-left: 37%;">
+                <input type="button" value="VER TOP" onclick="añadirImagenes();" style="width: 100%; height: 100%; float:left; ">
+            </div>
+            <div id="PIEDEPAGINA" style="padding-top: 5%;">
+                <table border="1" width="100%">
+                    <tr>
+                        <td style="text-align: center;" width="50%">ABOUT US</td>
+                        <td style="text-align: center;" width="50%">CONTACT US</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">Pagina diseñada para los fanaticos<br> del anime y los juegos</td>
+                        <td style="text-align: center;">Anime S.A.<br>C/Falsa 123 - España<br>Teléfono: 876-654-210</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

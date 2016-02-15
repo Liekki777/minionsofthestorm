@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Trabajo 2º Evaulacion</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/estilos.css" />
+        <script type="text/javascript" src="beans/Producto.js"></script>
+        <script type="text/javascript" src="services/Cargar.js"></script>
+        <script type="text/javascript" src="beans/Traductor.js"></script>
+        <style type="text/css">
+        </style>
+        <script type="text/javascript">
+            var arrayProductos = new Array();
+
+            function initComponents()
+            {
+                for (var i = 0; i < arrayProductos.length; i++)
+                {
+
+                    //var dive = document.getElementById("STATIC_caja" + i);
+                    var contenedor = document.querySelector("#CONTENEDOR1");
+                    var contenedor2 = document.querySelector("#CONTENEDOR2");
+                    var creoDiv = document.createElement("div");
+                    creoDiv.className = "divFoto";
+                    var creoDiv2 = document.createElement("div");
+                    creoDiv2.className = "divTitulo";
+
+                    var objProducto = arrayProductos[j];
+                    var nombreImagen = objProducto.getImagen();
+                    var titulo = objProducto.getNombre();
+
+
+                    var img = "<img src='images/" + nombreImagen + ".jpg'/>";
+                    var nombre = "<h3>" + titulo + "</h3>";
+
+                    creoDiv.innerHTML = img;
+                    creoDiv2.innerHTML = nombre;
+                    //creoDiv.appendChild(img);
+                    contenedor.appendChild(creoDiv2);
+                    contenedor2.appendChild(creoDiv);
+
+                }
+
+                añadirImagenes();
+
+            }
+
+            function añadirImagenes()
+            {
+
+                var matrizProductos = new Array();
+
+                matrizProductos[0] =
+                        new Producto("Top Animes",
+                                "",
+                                "Death_Note_Anime");
+                matrizProductos[1] =
+                        new Producto("Top Animes",
+                                "",
+                                "Death_Note_Anime");
+
+                arrayProductos.push(matrizProductos);
+
+                var matrizProductos = new Array();
+                matrizProductos[0] =
+                        new Producto("Top Mangas",
+                                "",
+                                "Naruto_Mangas");
+                matrizProductos[1] =
+                        new Producto("Top Mangas",
+                                "",
+                                "Naruto_Mangas");
+
+
+                arrayProductos.push(matrizProductos);
+
+                var matrizProductos = new Array();
+                matrizProductos[0] =
+                        new Producto("Top Novelas Ligeras",
+                                "",
+                                "Yahari_Ore_no_Seishun_Love_Comedy_wa_Novela");
+                matrizProductos[1] =
+                        new Producto("Top Light Novels",
+                                "",
+                                "Yahari_Ore_no_Seishun_Love_Comedy_wa_Novela");
+
+                arrayProductos.push(matrizProductos);
+                
+                var matrizProductos = new Array();
+                matrizProductos[0] =
+                        new Producto("Top Juegos",
+                                "",
+                                "Dragon_Ball_Xenoverse_Juego");
+                matrizProductos[1] =
+                        new Producto("Top Games",
+                                "",
+                                "Dragon_Ball_Xenoverse_Juego");
+
+                arrayProductos.push(matrizProductos);
+
+                refreshListaProductos(0);
+            }
+            function refreshListaProductos(id) {
+
+                var original = document.querySelector("#CONTENEDOR1");
+                limpiarCapa(original);
+
+                var posIni = 0;
+                var posFin = arrayProductos.length - 1;
+
+                for (var j = posIni; j <= posFin; j++) {
+                    // Notificar los objetos al HTML
+                    var contenedor = document.querySelector("#CONTENEDOR1");
+                    var contenedor2 = document.querySelector("#CONTENEDOR2");
+                    var creoDiv = document.createElement("div");
+                    creoDiv.className = "divFoto";
+                    var creoDiv2 = document.createElement("div");
+                    creoDiv2.className = "divTitulo";
+
+                    var objProducto = arrayProductos[j];
+                    var nombreImagen = objProducto[id].getImagen();
+                    var titulo = objProducto[id].getNombre();
+
+
+
+                    var img = "<img src='images/" + nombreImagen + ".jpg'/>";
+                    var nombre = "<h3>" + titulo + "</h3>";
+
+                    creoDiv.innerHTML = img;
+                    creoDiv2.innerHTML = nombre;
+                    //creoDiv.appendChild(img);
+                    contenedor.appendChild(creoDiv2);
+                    contenedor2.appendChild(creoDiv);
+                }
+            }
+            function limpiarCapa(capaALimpiar) {
+                while (capaALimpiar.firstChild !== null) {
+                    capaALimpiar.removeChild(
+                            capaALimpiar.firstChild
+                            );
+                }
+            }
+
+            function loguearse() {
+                var usuario = document.querySelector("#usuario_login").value;
+                var pass = document.querySelector("#password_login").value;
+
+                //comprobamos que el usuario esta registrado
+                if (usuario !== "" && pass !== "") {
+                    //recuperamos los valores guardados en sessionStorage y los deserializamos para leerlos
+                    var usuarios = "David";
+                    var password = "david";
+
+                    if (usuarios === usuario && password === pass) {
+                        //colocamos el contenido de usuario logueado
+                        colocar_cuenta_logueado(usuario);
+
+                        alert("login correcto.");
+                    }
+                    else {
+                        alert("login incorrecto.");
+                    }
+                }
+            }
+
+            function colocar_cuenta_logueado(usuario) {
+                
+                var original = document.querySelector("#menu_de_acceso");
+                limpiarCapa(original);
+                
+                //colocamos los diferentes botones y textos para un usuario logueado
+                var login = document.querySelector("#menu_de_acceso");
+                var creoDiv = document.createElement("div");
+                var creoDiv2 = document.createElement("div");
+
+                var bienvenido = "<label id=\"et_log\" class=\"logueado\">Bienvenido " + usuario + "</label><br/>";
+                var salir = "<input type=\"button\" id=\"deslogin\" class=\"logueado\" value=\"Salir\"/ onclick=\"desloguearse()\">";
+
+                creoDiv2.innerHTML = bienvenido;
+                creoDiv.innerHTML = salir;
+                //creoDiv.appendChild(img);
+                login.appendChild(creoDiv2);
+                login.appendChild(creoDiv);
+            }
+            
+            //FUNCION QUE DESLOGUEA
+            function desloguearse(){
+                    
+                    var original = document.querySelector("#menu_de_acceso");
+                    limpiarCapa(original);
+
+                    //colocamos los diferentes botones y textos para un usuario logueado
+                    var deslogin = document.querySelector("#menu_de_acceso");
+                    var creoDiv = document.createElement("div");
+                    var creoDiv2 = document.createElement("div");
+                    var creoDiv3 = document.createElement("div");
+                    
+                    var usuario = "<label id=\"et_user\" class=\"etiqueta_login\">Usuario:&nbsp;&nbsp;</label> <input type=\"text\" id=\"usuario_login\"/><br/>";
+                    var password = "<label id=\"et_pass\" class=\"etiqueta_login\">Password:</label><input type=\"password\" id=\"password_login\"/><br/>";
+                    var acceder = "<input type=\"button\" id=\"login\" value=\"Acceder\"/ onclick=\"loguearse()\">";
+
+                    creoDiv.innerHTML = usuario;
+                    creoDiv2.innerHTML = password;
+                    creoDiv3.innerHTML = acceder;
+                    //creoDiv.appendChild(img);
+                    deslogin.appendChild(creoDiv);
+                    deslogin.appendChild(creoDiv2);
+                    deslogin.appendChild(creoDiv3);
+            }
+        </script>
+    </head>
+    <body onload="initComponents();" style="font-family: Ariel;">
+        <div class="contenedor" style="width: 90%;  margin:0 auto; overflow: hidden;">
+            <div id="header" style="width: 100%; height: 15%; margin-bottom: 3%; padding-top: 5%">
+                <a href="index.html"><img src="images/anime_Logo.jpg" class="logo"></a>
+                <div id="acceder">
+                    <div id="menu_de_acceso" class="menu_de_acceso">
+                        <label id="et_user" class="etiqueta_login">Usuario:&nbsp;&nbsp;</label> <input type="text" id="usuario_login"/><br/>
+                        <label id="et_pass" class="etiqueta_login">Password:</label><input type="password" id="password_login"/><br/>
+                        <input type="button" id="login" value="Acceder" onclick="loguearse()"/>
+                    </div>
+                </div>
+                <div id="espanyol" class="bandera" onclick="refreshListaProductos(0)">
+                    <img src="images/espanyol.jpg">
+                </div>
+                <div id="ingles" class="bandera" onclick="refreshListaProductos(1)">
+                    <img src="images/english.gif">
+                </div>
+                <div style="width: 90%;  margin:0 auto; overflow: hidden;"></div>
+                <div>    
+                    <ul id="menuhorizontal" class="menuhorizontal">
+                        <li><a href="anime.html">ANIMES</a></li>
+                        <li><a href="mangas.html">MANGAS</a></li>
+                        <li><a href="novelaligera.html">NOVELAS LIGERA</a></li>
+                        <li><a href="juegos.html">JUEGOS</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="CONTENEDOR1" style="height: 20%; margin-left: 5%;">
+            </div>
+            <div id="CONTENEDOR2" style="height: 20%; margin-left: 5%;">
+            </div>
+            <div id="PIEDEPAGINA" style="padding-top: 5%;">
+                <table border="1" width="100%">
+                    <tr>
+                        <td style="text-align: center;" width="50%">ABOUT US</td>
+                        <td style="text-align: center;" width="50%">CONTACT US</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">Pagina diseñada para los fanaticos<br> del anime y los juegos</td>
+                        <td style="text-align: center;">Anime S.A.<br>C/Falsa 123 - España<br>Teléfono: 876-654-210</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
